@@ -1,0 +1,26 @@
+═══════════════════════════════════════════════════════════════════
+                    MODÈLE D'EMAIL - VERSION TEXTE
+                  Sondage de satisfaction - Rive-Nord Chrysler
+═══════════════════════════════════════════════════════════════════
+
+OBJET DE L'EMAIL :  Merci pour votre achat! Un petit sondage rapide? ⭐
+
+───────────────────────────────────────────────────────────────────
+
+Bonjour,
+
+Nous espérons que vous profitez pleinement de votre nouveau véhicule! 🚗
+
+Votre satisfaction est notre priorité. Pourriez-vous prendre 30 secondes 
+pour répondre à notre court sondage?
+
+👉 Cliquez ici pour donner votre avis : https://sondage-Rive-Nord-Chrysler.pages.dev
+
+Merci de votre confiance!
+
+L'équipe de Rive-Nord Chrysler
+📍 2180 Bd du Curé-Labelle, Saint-Jérôme, QC J7Y 1T3
+
+───────────────────────────────────────────────────────────────────
+
+═══════════════════════════════════════════════════════════════════

@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <title>Sondage de Satisfaction — Rive-Nord Chrysler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Amélioration 4: Typographie améliorée avec Google Fonts (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===================================================
+       SECTION CONFIGURATION (TERMINÉE)
+       =================================================== -->
+  <script>
+    const CONFIG = {
+      // =====================================================
+      // SOLUTION MOBILE + DESKTOP
+      // =====================================================
+      
+      // SOLUTION : Utiliser une redirection côté SERVEUR (Cloudflare Pages _redirects)
+      // pour contourner le dialogue "Ouvrir avec" sur Android
+      // Le fichier _redirects fait : /google-review -> URL Google (301)
+      // Une redirection 301 côté serveur ne déclenche PAS le dialogue Android
+      
+      // Place ID CONFIRMÉ via Google Place ID Finder
+      PLACE_ID: 'ChIJ61_wSxYtz0wRG3xhoKHUVHY',
+      
+      // URL de redirection interne (gérée par Cloudflare Pages _redirects)
+      // Cette URL fait une redirection 301 côté serveur vers Google
+      // Retour au lien officiel stable (Le seul garanti de fonctionner à 100% sur tous les appareils)
+      GOOGLE_REVIEW_URL: 'https://search.google.com/local/writereview?placeid=ChIJ61_wSxYtz0wRG3xhoKHUVHY',
+      
+      // URL directe Google
+      GOOGLE_REVIEW_URL_DIRECT: 'https://search.google.com/local/writereview?placeid=ChIJ61_wSxYtz0wRG3xhoKHUVHY',
+      // Logo intégré en Base64
+      DEALER_LOGO_URL: 'data:image/jpeg;base64,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mGvLQY08TNwqlt47ab6DePZ7xwnezj903SW6P8WBw2dop80wftbRPi0lFLuv5lgj4DX9sohagq/l3Hkw1Std1eoAxbt2/VvzEQsKXn2NbIIMfXttXjNTRvgo6bO3ZzL0quYnSrs4IbYVA0EAL2bkWjD1Q9pwaRi2DuNQOIy05A86iRMsytqoA+IqOQelWnwwkVBEomC1dtAQrKikDQu+8GFBYUFAo7W7mOqsCy7r5u36x//aAAwDAQACAAMAAAAQ88888888888888888888888888888888888888888888888888888888888888888gQMBs4og7IAQ8UUwMJtkNUEA4Msp5YAMRIREQB888888888888888888888888888888888888888888888888888888888888888888//EACERAAMAAQQBBQAAAAAAAAAAAAABESEQQVFgMDFhcYGh/9oACAEDAQE/EOgpEITFJpMUhspD6in6E5IRaJxFLmjZSwpSlKVW+B530uyTrw+OPdqueirV2A8K2L53MdG//8QAHBEBAAIBBQAAAAAAAAAAAAAAAREhYABAUaHw/9oACAECAQE/EMJl4Ae73CqN6CAUuD//xAAkEAEBAAICAQMFAQEAAAAAAAABEQAhMUFhEFFxgZGhwfBwsf/aAAgBAQABPxD/AHpHEx5PKOAz+g/efiDFO7H6Gcbei3Wx2x+2bkWt4lR5O3CZZNoqA1hvBCNMFVDwALcX0ofsSg1gL8Dgm3vlIoukRM/oP3nC3htVodlPv6AJ+5QoAXiovjCBECL8A0mK24XKAo0oj9cH4UhpHhyW6PVNvcsCu5xg8eVI82UiOuMe14WXyjgz+g/efjDGe7H6GEfsasAVrah9cVOSB2ffP+sUiVM+vroJAoNo0zDvb1laWo2/WFDWB0mIP9at1O2keVp24f8ASnUsfkXAtwE4LucYl689QDOl5NgTDe8F8bfgwSlEAJKIIc7T0QBAnFINMYb7HBwDroD00dp3YARzem4cLpaFs5RROYwvZm68X2UBsIRji1qeKqSuiqnavjYZflJSho7AYl9sOBA4JAnEinFI1hGuI2zTMO9vWKWdFt+sKmsDpPjOO89+jvahdlLu4R1aRmq8U/6xwlpY03dEtKoe9mGHFWOFB1ofWnpo4MBUkTy3oOtYRaBk82OGPO9FYyIOzVVwNNJiTW9az+n7c5Vwc9qr4dvk4jFcRVifI+D5M1PUmCfkK+phxWuQKXQ0e+f1v6we9EAoLzeqBMW3YysEfRH9/wASoaE6HHs9w0guV8Lc9AHgM2gN2Hiewh+fIxBXy4NCVUluieHvcyyo4AtqEGHvG/ZaixP5CPEe8S2ObScN70HWvGFtG0eKlUHnetsZGGNZGRE0mkmt61iMVVoagDZ+TD6N1KAAQNlCqTi4UWI5X46+gBgpTLBEhJZ7Ux4OQqHXKdZO8pldBCTMgUXdPDJRfeEp4RUaQhNYRtSABkluJM3xskLlAeUw843E0BAG7BoTkPb0ariLjeLzl9E0suuMSNHB2vfoZzWVG2PBk6xZIQCBtSFnFcW4cuPsJgmpGrDUwdqwgwGzp1RNjswTG8X5xgBjomc4H4EZrgShUigzY4X51MEAGoaDimNJ4hS6ZTrJ3lrgNEIMMgou6eG4ULutypJQaRB0YZKDYyeG59sEIiC7hiHwl4wwACAEA9ImxvVFdCoIEC6dVFNxJRSqPCBOS3UxVaz/AHQIUA5KQeMAvLPBOgkLRsQFzVqjwG4lG7Hs9s6WFlCoGrBzX6BtWEQlpZs+MTDCC1mSaIsHAuJwpAqSsWtTtHGyfwwQCWiQNRyCCCJloaF0nzjTWIoLmKBzoqzjiuSqMD9AsXV5wMvkUCx2gyWd4Kuk9TU5moKKHG8dVB1xPgwoEUnZhkjyww0AREQcZOgBiNArEAvVroyOhFHCG3ZEBqDglTUIs8qA15HTgqrAQUqkCHvxm4xan0b2BiLB3OH0UoFRAfJsfJsxUeLyh4f44NG2kPwLg+NeMDMFEetCO7eXc1jwW0NWNdGX3NzWDq8IRaPfv7jCCPf1xpPftcaaK1Z5RV5VXEvNFyRMNJpnJgaItUEg/ZFO07xw4GhEiuyCx5KzKOY1QTu/kbLx1lUVYq8zduAe+Ex62hq8E6JG/iGQQbAEADgMD1hEuEIou6RPtkVAa5mFCBCEXWOjnKmBRbWtHJOwW56WpiBV0EAN5ciXptARF2DHhx+q0YATEDdELzcrEYtco2gUi6upi8E8kh4gBu6dTNMQSh6O7cD5hbD/AGP/2Q==',
+      DEALER_BRAND: 'Rive-Nord Chrysler',
+      API_ENDPOINT: ''
+    };
+  </script>
+
+  <!-- =========================
+       STYLES (CSS)
+       ========================= -->
+  <style>
+    /* Amélioration de la Palette de Couleurs */
+    :root {
+      --bg-start: #fafafa; /* Gris très clair neutre */
+      --bg-end: #f1f1f1;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --brand: #0F4C81; /* Bleu Chrysler */
+      --brand-hover: #0C3E6A;
+      --border: #e2e8f0;
+      --shadow: rgba(15, 23, 42, .08);
+      --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      --progress-width: 0%;
+      --transition-speed: 0.3s;
+      
+      /* Couleurs pour les réponses */
+      --positive: #10B981; /* Vert (Tailwind Emerald 500) */
+      --positive-hover: #059669;
+      --neutral: #e2e8f0;
+      --neutral-hover: #cbd5e1;
+      --negative: #F59E0B; /* Ambre (Tailwind Amber 500) */
+      --negative-hover: #D97706;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      font-family: var(--font-family);
+      /* Arrière-plan en dégradé subtil */
+      background: linear-gradient(170deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .container {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .card {
+      width: 100%; max-width: 560px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 16px 40px var(--shadow);
+      overflow: hidden;
+    }
+    .logo-container {
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
+    .logo-container img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .title {
+      margin: 0.5rem 0 0.5rem;
+      text-align: center;
+      font-size: 1.6rem; font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .subtitle {
+      margin: 0 0 1.5rem;
+      text-align: center;
+      color: #64748b;
+      font-size: 1rem;
+    }
+    /* Emoji animé pour feedback visuel */
+    .emoji-feedback {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      animation: bounce 0.6s ease;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .progress-bar {
+        background-color: #e2e8f0;
+        border-radius: 99px;
+        height: 10px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .progress-bar-inner {
+        height: 100%;
+        width: var(--progress-width);
+        background: linear-gradient(90deg, var(--brand) 0%, #000000 100%);
+        border-radius: 99px;
+        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+    }
+    .progress-bar-inner::after {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+        animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+    .bubble {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .question-content {
+        transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+    }
+    .question-content.fade-out {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    .progress-text {
+      font-size: 0.75rem; font-weight: 600;
+      color: var(--brand);
+      margin-bottom: 0.5rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .qtext {
+      font-size: 1.1rem; margin: 0 0 1.5rem;
+      text-align: center; font-weight: 600;
+      min-height: auto;
+      line-height: 1.4;
+      color: #1e293b;
+      padding: 0 0.5rem;
+    }
+    .btns-binary, .btns-multi {
+      display: flex; gap: 0.75rem;
+    }
+    .btns-binary { flex-direction: column; align-items: center; }
+    .btns-multi { flex-direction: row; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.4rem;
+      width: auto; min-width: 110px;
+      text-decoration: none; padding: 0.75rem 1.25rem;
+      border-radius: 0.75rem;
+      font-weight: 600; cursor: pointer; border: 0;
+      font-size: 0.95rem; text-align: center;
+      transition: all 0.2s ease;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    }
+    .btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+    .btn:focus {
+      outline: 2px solid rgba(15, 76, 129, 0.4);
+      outline-offset: 2px;
+    }
+    .btn .icon {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+    .btns-binary .btn { width: 100%; max-width: 250px; }
+    
+    /* Style des boutons Oui/Non */
+    .btn[data-answer="oui"] { 
+      background: linear-gradient(135deg, var(--brand) 0%, #000000 100%); 
+      color: #fff;
+      box-shadow: 0 3px 12px rgba(15, 76, 129, 0.3);
+    }
+    .btn[data-answer="oui"]:hover { 
+      background: linear-gradient(135deg, #000000 0%, #000000 100%);
+      box-shadow: 0 4px 16px rgba(15, 76, 129, 0.4);
+    }
+    .btn[data-answer="non"] { 
+      background: #f8fafc; 
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+      box-shadow: none;
+    }
+    .btn[data-answer="non"]:hover { 
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: #475569;
+    }
+
+    /* Style des boutons de choix avec couleurs sémantiques */
+    .btn[data-answer="excellent"] { 
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%); 
+      color: #fff; 
+      box-shadow: 0 3px 12px rgba(16, 185, 129, 0.3);
+    }
+    .btn[data-answer="excellent"]:hover { 
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+    }
+    .btn[data-answer="moyen"] { 
+      background: #f1f5f9; 
+      color: #475569;
+      border: 1px solid #e2e8f0;
+      box-shadow: none;
+    }
+    .btn[data-answer="moyen"]:hover { 
+      background: #e2e8f0;
+      border-color: #cbd5e1;
+    }
+    .btn[data-answer="faible"] { 
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); 
+      color: #fff; 
+      box-shadow: 0 3px 12px rgba(239, 68, 68, 0.3);
+    }
+    .btn[data-answer="faible"]:hover { 
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+    }
+    
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem; color: var(--muted);
+      text-align: center;
+    }
+    .hidden { display: none !important; }
+    .btn.is-loading {
+        cursor: not-allowed;
+        color: transparent !important;
+    }
+    .btn.is-loading::after {
+        content: '';
+        position: absolute;
+        width: 20px; height: 20px;
+        top: calc(50% - 10px); left: calc(50% - 10px);
+        border: 2px solid rgba(255,255,255,0.5);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+    }
+    .btn[data-answer="moyen"].is-loading::after, .btn[data-answer="non"].is-loading::after {
+        border-color: rgba(0,0,0,0.2);
+        border-top-color: var(--text);
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    /* Responsive mobile */
+    @media (max-width: 480px) {
+        .container { padding: 1rem; }
+        .card { padding: 1.25rem; }
+        .logo-container img { max-width: 200px; }
+        .title { font-size: 1.35rem; }
+        .qtext { font-size: 1rem; padding: 0; }
+        .btns-multi {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .btns-multi .btn,
+        .btns-binary .btn {
+            width: 100%;
+            max-width: 280px;
+            padding: 0.9rem 1rem;
+        }
+        .bubble { padding: 1.25rem 1rem; }
+        .progress-bar { height: 8px; }
+    }
+    
+    /* Tablette */
+    @media (min-width: 481px) and (max-width: 768px) {
+        .card { max-width: 500px; }
+        .logo-container img { max-width: 230px; }
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div class="container"><div class="card"><h1 class="title">Sondage</h1><p>Veuillez activer JavaScript pour répondre.</p></div></div>
+  </noscript>
+
+  <div class="container">
+    <div class="card" id="app">
+      <div class="logo-container" id="logo-container">
+          <img src="" alt="Logo Rive-Nord Chrysler" id="dealer-logo">
+      </div>
+      <h1 class="title" id="title">Petit sondage de satisfaction</h1>
+      <p class="subtitle" id="subtitle">Merci de répondre aux 3 courtes questions.</p>
+
+      <div id="view-quiz" aria-live="polite">
+          <div class="progress-bar"><div class="progress-bar-inner" id="progress-bar-inner"></div></div>
+          
+          <div class="bubble">
+              <div class="question-content" id="question-content">
+                <p class="progress-text" id="progress-text">Question 1 / 3</p>
+                <p class="qtext" id="qtext"><strong>Question 1</strong></p>
+                <div class="btns-multi" id="btns-multi">
+                    <button class="btn" data-answer="excellent"><span class="icon">⭐</span> Excellent</button>
+                    <button class="btn" data-answer="moyen"><span class="icon">👌</span> Correct</button>
+                    <button class="btn" data-answer="faible"><span class="icon">😔</span> Décevant</button>
+                </div>
+                <div class="btns-binary hidden" id="btns-binary">
+                  <button class="btn" data-answer="oui" type="button"><span class="icon">❤️</span> Oui, bien sûr!</button>
+                  <button class="btn" data-answer="non" type="button"><span class="icon">🤔</span> Pas pour l'instant</button>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="hidden" id="view-thanks">
+          <div class="bubble">
+              <span class="emoji-feedback">🙏</span>
+              <p class="qtext"><strong>Merci pour votre temps!</strong></p>
+              <p class="subtitle">Votre avis nous est précieux et nous aide à vous offrir une meilleure expérience.</p>
+              <div class="btns-binary" style="margin-top: 1.5rem;">
+                <button class="btn" id="close-button" type="button" style="background: var(--brand); color: white;">✓ Fermer</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Vue pour redirection Google Reviews (utilisée sur mobile pour éviter le dialogue "Ouvrir avec") -->
+      <div class="hidden" id="view-google-redirect">
+          <div class="bubble" style="text-align: center;">
+              <span class="emoji-feedback" style="font-size: 4rem; display: block; margin-bottom: 1rem;">🌟</span>
+              <p class="qtext" style="font-size: 1.4rem; margin-bottom: 0.5rem;"><strong>Merci infiniment!</strong></p>
+              <p class="subtitle" style="font-size: 1rem; color: #475569; margin-bottom: 1.5rem;">Votre satisfaction nous fait chaud au cœur!</p>
+              <p class="subtitle" style="font-size: 0.95rem; color: #64748b; margin-bottom: 1.5rem;">Pourriez-vous prendre 30 secondes pour partager votre expérience sur Google? Cela nous aide énormément! 🙏</p>
+              <div style="margin-top: 1.5rem;">
+                <a href="https://search.google.com/local/writereview?placeid=ChIJ61_wSxYtz0wRG3xhoKHUVHY" 
+                   id="google-review-link"
+                   class="btn" 
+                   style="background: linear-gradient(135deg, #FBBC04 0%, #EA4335 50%, #4285F4 100%); color: white; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 50px; box-shadow: 0 4px 15px rgba(66, 133, 244, 0.4); width: 100%; max-width: 300px;">
+                  <span style="font-size: 1.3rem;">⭐</span> Laisser un avis Google
+                </a>
+              </div>
+              <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #94a3b8;">Vous serez redirigé vers Google</p>
+          </div>
+      </div>
+
+      <p class="footer-note" id="brandNote"></p>
+    </div>
+  </div>
+
+  <!-- =========================
+       LOGIQUE (JAVASCRIPT)
+       ========================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- DOM ELEMENTS ---
+        const App = {
+            root: document.getElementById('app'),
+            logo: document.getElementById('dealer-logo'),
+            title: document.getElementById('title'),
+            subtitle: document.getElementById('subtitle'),
+            brandNote: document.getElementById('brandNote'),
+            viewQuiz: document.getElementById('view-quiz'),
+            viewThanks: document.getElementById('view-thanks'),
+            progressBar: document.getElementById('progress-bar-inner'),
+            questionContent: document.getElementById('question-content'),
+            progressText: document.getElementById('progress-text'),
+            qtext: document.getElementById('qtext'),
+            btnsMulti: document.getElementById('btns-multi'),
+            btnsBinary: document.getElementById('btns-binary'),
+      closeButton: document.getElementById('close-button'),
+      viewGoogleRedirect: document.getElementById('view-google-redirect'),
+      googleReviewLink: document.getElementById('google-review-link'),
+        };
+
+        // --- APPLICATION STATE ---
+        const state = {
+            step: 1,
+            q1: null, q2: null, q3: null,
+            cid: new URLSearchParams(location.search).get('cid') || '',
+            isSubmitting: false,
+        };
+        
+        // --- DATA ---
+        const QUESTIONS = {
+            1: 'Comment évaluez-vous votre représentant(e) chez Rive-Nord Chrysler?',
+            2: "Comment évaluez-vous votre expérience d'achat chez Rive-Nord Chrysler?" ,
+            3: 'Recommanderiez-vous Rive-Nord Chrysler à vos proches?'
+        };
+
+        // --- CORE LOGIC ---
+        const isPositiveExperience = () => {
+            const { q1, q2, q3 } = state;
+            return (q1 === 'excellent' && q2 === 'excellent' && q3 === 'oui');
+        };
+
+        // Détection mobile
+        const isMobileDevice = () => {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                   || (window.innerWidth <= 768);
+        };
+        
+        // Utilise maintenant l'URL universelle search.google.com/local/writereview
+        // qui fonctionne de manière IDENTIQUE sur mobile et desktop
+        const getGoogleReviewUrl = () => {
+            // URL universelle qui ouvre directement la popup d'écriture d'avis
+            return CONFIG.GOOGLE_REVIEW_URL;
+        };
+
+        // Affiche la vue de redirection Google (avec bouton cliquable - évite le dialogue "Ouvrir avec" sur mobile)
+        const renderGoogleRedirectView = () => {
+            App.viewQuiz.classList.add('hidden');
+            App.viewThanks.classList.add('hidden');
+            App.viewGoogleRedirect.classList.remove('hidden');
+            App.title.textContent = 'Merci!';
+            App.subtitle.textContent = '';
+            document.title = `Merci • ${CONFIG.DEALER_BRAND}`;
+        };
+
+        const render = () => {
+            App.logo.src = CONFIG.DEALER_LOGO_URL;
+            App.logo.alt = `Logo de ${CONFIG.DEALER_BRAND}`;
+            App.brandNote.textContent = `© ${new Date().getFullYear()} ${CONFIG.DEALER_BRAND}`;
+            
+            App.questionContent.classList.add('fade-out');
+
+            setTimeout(() => {
+                if (state.step <= 3) {
+                    App.viewQuiz.classList.remove('hidden');
+                    App.viewThanks.classList.add('hidden');
+                    
+                    document.title = `Sondage — Q${state.step} • ${CONFIG.DEALER_BRAND}`;
+                    App.root.style.setProperty('--progress-width', `${state.step * 33.33}%`);
+                    App.progressText.textContent = `Question ${state.step} / 3`;
+                    App.qtext.innerHTML = `<strong>${QUESTIONS[state.step]}</strong>`;
+                    App.title.textContent = state.step === 1 ? 'Petit sondage de satisfaction' : state.step === 2 ? 'Merci! Poursuivons.' : 'Dernière petite question';
+                    App.subtitle.textContent = 'Votre avis nous intéresse.';
+                    
+                    if (state.step === 1 || state.step === 2) {
+                        App.btnsMulti.classList.remove('hidden');
+                        App.btnsBinary.classList.add('hidden');
+                    } else {
+                        App.btnsMulti.classList.add('hidden');
+                        App.btnsBinary.classList.remove('hidden');
+                    }
+                } else {
+                    App.viewQuiz.classList.add('hidden');
+                    App.viewThanks.classList.remove('hidden');
+                    App.title.textContent = 'Merci!';
+                    App.subtitle.textContent = '';
+                    document.title = `Merci • ${CONFIG.DEALER_BRAND}`;
+                }
+                App.questionContent.classList.remove('fade-out');
+            }, 300);
+        };
+
+        async function submitSurvey(button) {
+            if (state.isSubmitting) return;
+            state.isSubmitting = true;
+            button.classList.add('is-loading');
+            
+            const data = {
+                cid: state.cid, q1: state.q1, q2: state.q2, q3: state.q3,
+                at: new Date().toISOString(), href: location.href
+            };
+            
+            try { await sendResult(data); } 
+            catch (e) { console.warn("L'envoi a échoué mais le processus continue.", e); }
+
+            if (isPositiveExperience()) {
+                // Redirection vers /google-review qui fait une redirection 301 côté serveur
+                // Cette méthode contourne le dialogue "Ouvrir avec" sur Android
+                setTimeout(() => { window.location.href = getGoogleReviewUrl(); }, 100);
+            } else {
+                state.step = 4;
+        state.isSubmitting = false;
+                render();
+            }
+        }
+        
+        async function sendResult(data) {
+            try {
+                if (navigator.sendBeacon && CONFIG.API_ENDPOINT) {
+                    if (navigator.sendBeacon(CONFIG.API_ENDPOINT, new Blob([JSON.stringify(data)], { type: 'application/json' }))) return;
+                }
+                if (CONFIG.API_ENDPOINT) {
+                    await fetch(CONFIG.API_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data), keepalive: true });
+                    return;
+                }
+                // MODIFICATION: Suppression de l'ouverture automatique du courriel (mailto)
+                // Cela empêchait la redirection fluide vers Google sur mobile (problème "Ouvrir avec").
+                console.log('Résultat enregistré localement:', data);
+                
+            } catch (e) {
+                console.error('Erreur lors de l\'envoi des résultats:', e);
+            }
+        }
+        
+        function handleAnswer(e) {
+            const button = e.target.closest('.btn');
+            if (!button || !button.dataset.answer || state.isSubmitting) return;
+
+            const answer = button.dataset.answer;
+            if (state.step === 1) state.q1 = answer;
+            else if (state.step === 2) state.q2 = answer;
+            else if (state.step === 3) state.q3 = answer;
+
+            if (state.step < 3) {
+                state.step++;
+                render();
+            } else {
+                submitSurvey(button);
+            }
+        }
+        
+    function handleCloseClick(event) {
+      event.preventDefault();
+
+      // Tentative de fermeture de la fenêtre / onglet
+      window.close();
+
+      // Si la fenêtre ne peut pas être fermée (cas d'un onglet ouvert directement), repli
+      if (!window.closed) {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = 'about:blank';
+        }
+      }
+    }
+
+        function init() {
+            const q1FromUrl = new URLSearchParams(location.search).get('q1');
+            if (q1FromUrl) {
+                state.q1 = q1FromUrl;
+                state.step = 2;
+            }
+            App.root.addEventListener('click', handleAnswer);
+            App.closeButton.addEventListener('click', handleCloseClick);
+            render();
+        }
+
+        init();
+    });
+  </script>
+
+</body>
+</html>

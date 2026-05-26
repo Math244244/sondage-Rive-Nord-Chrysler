@@ -1,0 +1,15 @@
+# Redirections Cloudflare Pages
+# Cette redirection cote serveur contourne le dialogue "Ouvrir avec" sur Android
+
+/google-review  https://search.google.com/local/writereview?placeid=ChIJ61_wSxYtz0wRG3xhoKHUVHY  301!
+
+# Blocage des fichiers internes (les rediriger vers la page principale)
+/GUIDE-NOUVEAU-CLIENT.txt  /  302
+/GUIDE-MIGRATION-SONDAGE.md  /  302
+/Instructions.txt  /  302
+/Instructions.html  /  302
+/Template-Email-Sondage.html  /  302
+/Template-Email-Texte.txt  /  302
+/Template-SMS.txt  /  302
+/.gitignore  /  302
+/rive_nord_chrysler_logo.jpg  /  302

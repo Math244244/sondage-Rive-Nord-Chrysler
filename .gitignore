@@ -1,0 +1,47 @@
+# Archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+# OS - Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# OS - macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# OS - Linux
+*~
+.directory
+
+# Logs
+*.log
+
+# Editeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python (pour generate_qr.py)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+env/
+
+# Fichiers temporaires
+*.tmp
+*.bak
+~*
+
+# Fichiers internes Cursor
+.cursor/

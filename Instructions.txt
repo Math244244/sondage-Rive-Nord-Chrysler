@@ -1,0 +1,132 @@
+
+   🚗  GUIDE — SONDAGE DE SATISFACTION
+       Rive-Nord Chrysler
+
+
+   🔗  VOTRE LIEN À ENVOYER AUX CLIENTS
+       (déjà prêt — copiez-le dans vos emails ou textos)
+
+       https://sondage-Rive-Nord-Chrysler.pages.dev
+
+
+   ── EN BREF ──────────────────────────────────────────────────
+
+   1. Envoyez le lien après chaque vente
+   2. Le client répond à 3 questions (environ 30 secondes)
+   3. Client satisfait → redirection vers Google
+   4. Client moins satisfait → remerciement seulement (pas de Google)
+
+
+   ── 1. COMMENT ÇA MARCHE? ────────────────────────────────────
+
+   Vente → Lien envoyé → 3 questions → Résultat
+
+   ✅  Client satisfait (Excellent + Excellent + Oui)
+       → Avis Google
+
+   ❌  Client moins satisfait
+       → Message de remerciement seulement — pas de Google
+
+
+   ── 2. COMMENT ENVOYER LE SONDAGE? ───────────────────────────
+
+   Utilisez-vous Activix pour vos suivis de vente?
+
+
+   OUI — Envoi automatique (recommandé)
+   Le sondage part seul quand le véhicule passe au statut « Livré ».
+
+       1. Contactez le support Activix
+       2. Demandez un email ou SMS automatique au statut « Livré »
+       3. Donnez-leur un fichier modèle (voir section 3)
+
+
+   NON — Envoi manuel
+   Après chaque vente, copiez un modèle dans Gmail, Outlook ou SMS.
+
+       1. Ouvrez le bon fichier modèle (section 3)
+       2. Sélectionnez tout et copiez
+       3. Collez dans votre message
+       4. Envoyez au client
+
+
+   ── 3. QUEL FICHIER UTILISER? ────────────────────────────────
+
+   Ouvrez le fichier correspondant, copiez le contenu et envoyez-le.
+
+   Si vous voulez…                    Fichier à ouvrir
+   ─────────────────────────────────  ─────────────────────────────
+   Un bel email avec bouton           Template-Email-Sondage.html
+   Activix, CRM ou email texte        Template-Email-Texte.txt
+   Un texto court                     Template-SMS.txt
+
+   💡 Pour l'email visuel : ouvrez le fichier .html dans votre
+      navigateur, sélectionnez tout, copiez, puis collez dans
+      Gmail ou Outlook.
+
+
+   ── 4. VOS MODÈLES DE MESSAGE ────────────────────────────────
+
+   Copiez le modèle qui correspond à votre type d'envoi.
+
+
+   📧  MODÈLE 1 — EMAIL AVEC BOUTON STYLISÉ (HTML)
+       ► Le plus professionnel
+
+   Ouvrez le fichier "Template-Email-Sondage.html" dans votre
+   navigateur, puis CTRL + A → CTRL + C → collez dans Gmail/Outlook.
+
+   Objet à utiliser :
+
+       Merci pour votre achat! Un petit sondage rapide? ⭐
+
+
+   📝  MODÈLE 2 — EMAIL TEXTE SIMPLE
+       ► Idéal pour Activix et autres CRM
+
+   OBJET :    Merci pour votre achat! Un petit sondage rapide? ⭐
+
+   CORPS DU MESSAGE :
+
+   ──────────────────────────────────────────────────────────────
+
+   Bonjour,
+
+   Nous espérons que vous profitez pleinement de votre nouveau
+   véhicule! 🚗
+
+   Votre satisfaction est notre priorité. Pourriez-vous prendre 30
+   secondes pour répondre à notre court sondage?
+
+   👉 Cliquez ici pour donner votre avis :
+      https://sondage-Rive-Nord-Chrysler.pages.dev
+
+   Merci de votre confiance!
+
+   L'équipe de Rive-Nord Chrysler
+   📍 2180 Bd du Curé-Labelle, Saint-Jérôme, QC J7Y 1T3
+
+   ──────────────────────────────────────────────────────────────
+
+
+   📱  MODÈLE 3 — SMS / TEXTO
+       ► Court et efficace
+
+   MESSAGE À ENVOYER :
+
+   ──────────────────────────────────────────────────────────────
+
+   Bonjour! 🚗
+
+   Merci pour votre achat chez Rive-Nord Chrysler!
+
+   Avez-vous 30 secondes pour un petit sondage?
+   👉 https://sondage-Rive-Nord-Chrysler.pages.dev
+
+   Merci et bonne route!
+   — L'équipe Rive-Nord Chrysler
+
+   ──────────────────────────────────────────────────────────────
+
+
+                        Bonne utilisation!  🚗 ⭐

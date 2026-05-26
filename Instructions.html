@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+    <meta charset="utf-8">
+    <title>Guide d'utilisation - Sondage Rive-Nord Chrysler</title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 680px; margin: 30px auto; padding: 20px; color: #1e293b; background: #f1f5f9; line-height: 1.55; }
+        .container { background: #ffffff; padding: 32px 36px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+
+        .header-band { background: linear-gradient(135deg, #0F4C81 0%, #000000 100%); color: #fff; padding: 20px 24px; border-radius: 10px; margin-bottom: 20px; }
+        .header-band h1 { color: #fff; font-size: 20px; margin: 0 0 4px 0; font-weight: 700; }
+        .header-band p { margin: 0; color: rgba(255,255,255,0.92); font-size: 14px; }
+
+        .link-box { background: #ecfdf5; border: 2px solid #10b981; border-radius: 10px; padding: 18px 20px; margin-bottom: 20px; text-align: center; }
+        .link-box .label { font-size: 11px; color: #047857; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .link-box .hint { font-size: 13px; color: #065f46; margin: 0 0 8px 0; }
+        .link-box a { color: #047857; font-size: 16px; font-weight: 700; text-decoration: none; word-break: break-all; }
+
+        .brief-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+        .brief-box .title { font-size: 11px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .brief-box ol { margin: 0; padding-left: 20px; color: #334155; font-size: 14px; }
+        .brief-box li { margin: 5px 0; }
+
+        .section-block { margin-bottom: 28px; }
+        .section-head { margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; }
+        .section-head h2 { margin: 0; font-size: 17px; color: #1e293b; font-weight: 700; }
+
+        .intro { margin: 0 0 14px 0; color: #475569; font-size: 14px; }
+
+        .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; font-size: 13px; color: #475569; }
+        .flow-step { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 10px; font-weight: 600; color: #334155; }
+        .flow-arrow { color: #94a3b8; font-weight: 700; }
+
+        .result-grid { display: grid; gap: 10px; }
+        .result-card { border-radius: 8px; padding: 12px 14px; font-size: 14px; }
+        .result-card.positive { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+        .result-card.negative { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+        .result-card strong { display: block; margin-bottom: 2px; }
+
+        .decision-box { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; }
+        .decision-box p { margin: 0; font-size: 14px; font-weight: 600; color: #9a3412; }
+
+        .path-card { border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; border: 1px solid #e2e8f0; }
+        .path-card:last-child { margin-bottom: 0; }
+        .path-card.activix { background: #fef2f2; border-left: 4px solid #0F4C81; }
+        .path-card.manual { background: #f8fafc; border-left: 4px solid #64748b; }
+        .path-card h3 { margin: 0 0 8px 0; font-size: 15px; color: #1e293b; }
+        .path-card .when { font-size: 13px; color: #64748b; margin: 0 0 10px 0; }
+        .path-card ol { margin: 0; padding-left: 20px; font-size: 14px; color: #475569; }
+        .path-card li { margin: 5px 0; }
+        .badge { display: inline-block; background: #10b981; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 6px; vertical-align: middle; }
+
+        .choice-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .choice-table th { text-align: left; background: #f8fafc; color: #64748b; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; padding: 10px 12px; border-bottom: 2px solid #e2e8f0; }
+        .choice-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; vertical-align: top; color: #334155; }
+        .choice-table tr:last-child td { border-bottom: none; }
+        .file-name { font-family: Consolas, monospace; color: #0F4C81; font-weight: 700; font-size: 13px; white-space: nowrap; }
+
+        .note { margin-top: 12px; font-size: 13px; color: #64748b; }
+
+        .template-grid { display: grid; gap: 16px; margin-top: 16px; }
+        .template-card { border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; }
+        .template-header { background: #f8fafc; padding: 14px 18px; border-bottom: 1px solid #e2e8f0; }
+        .template-header h3 { margin: 0 0 4px 0; font-size: 15px; color: #1e293b; }
+        .template-header p { margin: 0; font-size: 13px; color: #64748b; }
+        .template-body { padding: 16px 18px; }
+        .template-body p { margin: 0 0 10px 0; font-size: 14px; color: #475569; }
+        .template-body p:last-child { margin-bottom: 0; }
+        .copy-block { background: #f8fafc; border: 1px dashed #cbd5e1; padding: 14px 16px; margin-top: 10px; border-radius: 8px; font-size: 14px; color: #334155; line-height: 1.7; }
+        .copy-label { display: block; font-size: 10px; color: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; }
+        .key { display: inline-block; background: #1e293b; color: #fff; padding: 2px 8px; border-radius: 4px; font-family: Consolas, monospace; font-size: 11px; font-weight: 700; }
+
+        .footer { text-align: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0; color: #64748b; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+<!-- DÉBUT DU CONTENU À COPIER (Ctrl+A → Ctrl+C) -->
+
+<div class="container">
+
+    <div class="header-band">
+        <h1>🚗 Guide — Sondage de satisfaction</h1>
+        <p><strong>Rive-Nord Chrysler</strong></p>
+    </div>
+
+    <div class="link-box">
+        <div class="label">🔗 Votre lien à envoyer aux clients</div>
+        <p class="hint">Déjà prêt — copiez-le dans vos emails ou textos</p>
+        <a href="https://sondage-Rive-Nord-Chrysler.pages.dev">https://sondage-Rive-Nord-Chrysler.pages.dev</a>
+    </div>
+
+    <div class="brief-box">
+        <div class="title">En bref</div>
+        <ol>
+            <li>Envoyez le lien après chaque vente</li>
+            <li>Le client répond à 3 questions (environ 30 secondes)</li>
+            <li>Client satisfait → redirection vers Google</li>
+            <li>Client moins satisfait → remerciement seulement (pas de Google)</li>
+        </ol>
+    </div>
+
+
+    <!-- SECTION 1 -->
+    <div class="section-block">
+        <div class="section-head">
+            <h2>1. Comment ça marche?</h2>
+        </div>
+
+        <div class="flow">
+            <span class="flow-step">Vente</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Lien envoyé</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">3 questions</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Résultat</span>
+        </div>
+
+        <div class="result-grid">
+            <div class="result-card positive">
+                <strong>✅ Client satisfait</strong>
+                Excellent + Excellent + Oui → avis Google
+            </div>
+            <div class="result-card negative">
+                <strong>❌ Client moins satisfait</strong>
+                Message de remerciement seulement — pas de Google
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SECTION 2 -->
+    <div class="section-block">
+        <div class="section-head">
+            <h2>2. Comment envoyer le sondage?</h2>
+        </div>
+
+        <div class="decision-box">
+            <p>Utilisez-vous Activix pour vos suivis de vente?</p>
+        </div>
+
+        <div class="path-card activix">
+            <h3>Oui — Envoi automatique <span class="badge">RECOMMANDÉ</span></h3>
+            <p class="when">Le sondage part seul quand le véhicule passe au statut « Livré ».</p>
+            <ol>
+                <li>Contactez le support Activix</li>
+                <li>Demandez un email ou SMS automatique au statut « Livré »</li>
+                <li>Donnez-leur un fichier modèle (voir section 3)</li>
+            </ol>
+        </div>
+
+        <div class="path-card manual">
+            <h3>Non — Envoi manuel</h3>
+            <p class="when">Après chaque vente, copiez un modèle dans Gmail, Outlook ou votre app SMS.</p>
+            <ol>
+                <li>Ouvrez le bon fichier modèle (section 3)</li>
+                <li>Sélectionnez tout et copiez</li>
+                <li>Collez dans votre message</li>
+                <li>Envoyez au client</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <!-- SECTION 3 -->
+    <div class="section-block">
+        <div class="section-head">
+            <h2>3. Quel fichier utiliser?</h2>
+        </div>
+
+        <p class="intro">Ouvrez le fichier correspondant, copiez le contenu et envoyez-le au client.</p>
+
+        <table class="choice-table">
+            <thead>
+                <tr>
+                    <th>Si vous voulez…</th>
+                    <th>Fichier à ouvrir</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Un bel email avec bouton</td>
+                    <td><span class="file-name">Template-Email-Sondage.html</span></td>
+                </tr>
+                <tr>
+                    <td>Activix, CRM ou email texte simple</td>
+                    <td><span class="file-name">Template-Email-Texte.txt</span></td>
+                </tr>
+                <tr>
+                    <td>Un texto court</td>
+                    <td><span class="file-name">Template-SMS.txt</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="note">💡 Pour l'email visuel : ouvrez le fichier .html dans votre navigateur, sélectionnez tout, copiez, puis collez dans Gmail ou Outlook.</p>
+    </div>
+
+
+    <!-- MODÈLES COMPLETS -->
+    <div class="section-block">
+        <div class="section-head">
+            <h2>4. Vos modèles de message</h2>
+        </div>
+
+        <p class="intro">Copiez le modèle qui correspond à votre type d'envoi.</p>
+
+        <div class="template-grid">
+
+            <div class="template-card">
+                <div class="template-header">
+                    <h3>📧 Modèle 1 — Email avec bouton stylisé (HTML)</h3>
+                    <p>Le plus professionnel</p>
+                </div>
+                <div class="template-body">
+                    <p>Ouvrez le fichier <span class="file-name">Template-Email-Sondage.html</span> dans votre navigateur, puis <span class="key">CTRL + A</span> → <span class="key">CTRL + C</span> → collez dans Gmail/Outlook.</p>
+                    <div class="copy-block">
+                        <span class="copy-label">Objet à utiliser</span>
+                        Merci pour votre achat! Un petit sondage rapide? ⭐
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header">
+                    <h3>📝 Modèle 2 — Email texte simple</h3>
+                    <p>Idéal pour Activix et autres CRM</p>
+                </div>
+                <div class="template-body">
+                    <div class="copy-block">
+                        <span class="copy-label">Objet de l'email</span>
+                        Merci pour votre achat! Un petit sondage rapide? ⭐
+                    </div>
+                    <div class="copy-block">
+                        <span class="copy-label">Corps du message</span>
+                        Bonjour,<br><br>
+                        Nous espérons que vous profitez pleinement de votre nouveau véhicule! 🚗<br><br>
+                        Votre satisfaction est notre priorité. Pourriez-vous prendre 30 secondes pour répondre à notre court sondage?<br><br>
+                        👉 Cliquez ici pour donner votre avis :<br>
+                        <a href="https://sondage-Rive-Nord-Chrysler.pages.dev" style="color:#0F4C81; font-weight:700;">https://sondage-Rive-Nord-Chrysler.pages.dev</a><br><br>
+                        Merci de votre confiance!<br><br>
+                        L'équipe de <strong>Rive-Nord Chrysler</strong><br>
+                        📍 2180 Bd du Curé-Labelle, Saint-Jérôme, QC J7Y 1T3
+                    </div>
+                </div>
+            </div>
+
+            <div class="template-card">
+                <div class="template-header">
+                    <h3>📱 Modèle 3 — SMS / texto</h3>
+                    <p>Court et efficace</p>
+                </div>
+                <div class="template-body">
+                    <div class="copy-block">
+                        <span class="copy-label">Message à envoyer</span>
+                        Bonjour! 🚗<br><br>
+                        Merci pour votre achat chez <strong>Rive-Nord Chrysler</strong>!<br><br>
+                        Avez-vous 30 secondes pour un petit sondage?<br>
+                        👉 <a href="https://sondage-Rive-Nord-Chrysler.pages.dev" style="color:#0F4C81; font-weight:700;">https://sondage-Rive-Nord-Chrysler.pages.dev</a><br><br>
+                        Merci et bonne route!<br>
+                        — L'équipe Rive-Nord Chrysler
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <p class="footer">Bonne utilisation! &nbsp;🚗 &nbsp;⭐</p>
+
+</div>
+
+<!-- FIN DU CONTENU -->
+
+</body>
+</html>
